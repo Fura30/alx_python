@@ -1,8 +1,10 @@
-  number = int(input("Enter a number: "))
-if number >= 0:
-   if number == 0:
-       print(number,"is zero")
-   else:
-       print(number ,"is positive")
-else:
-   print(number,"is negative")
+ import random
+
+def generate_and_check():
+    number = random.randint(-10, 10)
+    if random_number > 0:
+        print( number, "is positive.")
+    elif random_number < 0:
+        print(number," is negative.")
+    else:
+        print(" is zero.")
