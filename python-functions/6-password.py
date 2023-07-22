@@ -1,27 +1,17 @@
-#!/bin/bash/python3
 def validate_password(password):
-    # Check length
     if len(password) < 8:
         return False
-
-    # Check for uppercase, lowercase, and digits
-    has_uppercase = False
-    has_lowercase = False
-    has_digit = False
-    for char in password:
-        if char.isupper():
-            has_uppercase = True
-        elif char.islower():
-            has_lowercase = True
-        elif char.isdigit():
-            has_digit = True
-
+    has_uppercase = any(char.isupper() for char in password)
+    has_lowercase = any(char.islower() for char in password)
+    has_digit = any(char.isdigit() for char in password)   
     if not (has_uppercase and has_lowercase and has_digit):
-        return False
-
-    # Check for spaces
-    if   in password:
-        return False
-
-    # If all checks passed, return True
+        return False    
+    if  ' ' in password:
+        return False    
     return True
+password1 = "SecurePass123"
+password2 = "weakpass"
+password3 = "pass with spaces"
+print(validate_password(password1)) 
+print(validate_password(password2)) 
+print(validate_password(password3))
