@@ -7,19 +7,19 @@ def validate_password(password):
         return False
 
     # Check if the password contains at least one uppercase letter
-    if not re.search(r[A-Z], password):
+    if not re.search(r'[A-Z]', password):
         return False
 
     # Check if the password contains at least one lowercase letter
-    if not re.search(r[a-z], password):
+    if not re.search(r'[a-z]', password):
         return False
 
-    # Chec6k if the password contains at least one digit
-    if not re.search(rd, password):
+    # Check if the password contains at least one digit
+    if not re.search('r\d', password):
         return False
 
     # Check if the password contains any spaces
-    if  ' ' in password:
+    if '' in password:
         return False
 
     # If all checks passed, return True
