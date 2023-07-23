@@ -24,6 +24,3 @@ def validate_password(password):
 
     # If all checks passed, return True
     return True
-
-# Test cases
-print(validate_password("Password123"))  # True
