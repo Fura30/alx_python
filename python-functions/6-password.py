@@ -14,12 +14,12 @@ def validate_password(password):
     if not re.search(r[a-z], password):
         return False
 
-    # Check if the password contains at least one digit
+    # Chec6k if the password contains at least one digit
     if not re.search(rd, password):
         return False
 
     # Check if the password contains any spaces
-    if   in password:
+    if  ' ' in password:
         return False
 
     # If all checks passed, return True
