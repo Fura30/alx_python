@@ -1,1 +1,1 @@
- my python code
+Python - Inheritance
