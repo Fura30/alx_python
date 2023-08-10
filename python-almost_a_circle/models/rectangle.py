@@ -1,59 +1,73 @@
-#!/usr/bin/python3
-class Base:
-    __nb_objects = 0  # private class attribute
 
-    def __init__(self, id=None):
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+from models.base import Base
+
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
-        
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be greater than 0")
         self.__width = value
-        
+
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be greater than 0")
         self.__height = value
-        
+
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be non-negative")
         self.__x = value
-        
+
     @property
     def y(self):
         return self.__y
-    
+
     @y.setter
     def y(self, value):
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be non-negative")
         self.__y = value
-if __name__ == "__main__":
 
-    r1 = Rectangle(10, 2)
-    print(r1.id)
+    def area(self):
+        return self.width * self.height
 
-    r2 = Rectangle(2, 10)
-    print(r2.id)
+    def display(self):
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
 
-    r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)        
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
+  
