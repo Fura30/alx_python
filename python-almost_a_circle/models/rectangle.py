@@ -1,5 +1,3 @@
-from models.base import Base
-
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -38,4 +36,16 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.__y = value
+        self.__y = value 
+
+class Rectangle( Rectangle):
+ if __name__ == "__main__":
+
+    r1 = Rectangle(10, 2)
+    print(r1.id)
+
+    r2 = Rectangle(2, 10)
+    print(r2.id)
+
+    r3 = Rectangle(10, 2, 0, 0, 12)
+    print(r3.id)
