@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+from base import Base
+
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -48,4 +51,4 @@ class Rectangle( Rectangle):
     print(r2.id)
 
     r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)
+    print(r3.id)      
