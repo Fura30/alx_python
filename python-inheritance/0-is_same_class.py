@@ -1,24 +1,5 @@
-#!/usr/bin/env python3
-"""
-This code allows the user to define the size of a square
-"""
-class Square:
+def is_same_class(obj, a_class):
     """
-    This class defines a square by a private instance attribute 'size'.
-
-    Attributes:
-        __size (int): The size of the square.
-
-    Methods:
-        __init__(self, size): Initializes a new Square instance with the given size.
+    Returns True if the object is exactly an instance of the specified class; otherwise False.
     """
-
-    def __init__(self, size):
-        """
-        Initializes a new Square instance with the given size.
-
-        Args:
-            size (int): The size of the square.
-        """
-        self.__size = size
-  
+    return type(obj) == a_class
