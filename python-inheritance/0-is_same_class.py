@@ -1,18 +1,24 @@
-#checking instance of object in each class
-def is_same_class(obj, a_class):
-#    print(".")
-   return type(obj) is a_class
+#!/usr/bin/env python3
+"""
+This code allows the user to define the size of a square
+"""
+class Square:
+    """
+    This class defines a square by a private instance attribute 'size'.
 
-# Classes 
-class A:
-    pass
+    Attributes:
+        __size (int): The size of the square.
 
-class B(A):
-    pass
+    Methods:
+        __init__(self, size): Initializes a new Square instance with the given size.
+    """
 
-obj1 = A()
-obj2 = B()
+    def __init__(self, size):
+        """
+        Initializes a new Square instance with the given size.
 
-is_same_class(obj1, A)
-a = 1
-#print (  is_same_class(a, int))
+        Args:
+            size (int): The size of the square.
+        """
+        self.__size = size
+  
