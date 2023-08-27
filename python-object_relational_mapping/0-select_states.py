@@ -25,4 +25,4 @@ for row in rows:
 
 # Close the cursor and database connection
 cursor.close()
-db.close()
+db.close() 
