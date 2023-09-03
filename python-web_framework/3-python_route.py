@@ -26,9 +26,10 @@ def c(text):
 
 
 @app.route('/python/<text>', strict_slashes=False)
-def python(text="is cool"):
-    """Display 'Python ' followed by the value of the text variable"""
-    return "Python {}".format(text.replace('_', ' '))
+@app.route('/python/', strict_slashes=False)
+def display_python_text(text="is cool"):
+     """Display 'Python ' followed by the value of the text variable"""
+    return "Python {}".format(text.replace("_", " "))
 
 
 if __name__ == "__main__":
