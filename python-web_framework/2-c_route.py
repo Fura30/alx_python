@@ -1,34 +1,30 @@
 #!/usr/bin/python3
-from flask import Flask
+"""
+This is a simple Flask web application.
+"""
 
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
+    """Display 'Hello HBNB!'"""
     return "Hello HBNB!"
-  """
-    Route: /
-    Displays "Hello HBNB!" on the homepage.
-    """
+
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
+    """Display 'HBNB'"""
     return "HBNB"
-  """
-    Route: /hbnb
-    Displays "HBNB" on the homepage.
-    """
+
 
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
-    text = text.replace("_", " ")
-    return "C {}".format(text)
-  """
-    Route: /c/<text>
-    Displays "C_ " on the homepage.
-    """
+    """Display 'C ' followed by the value of the text variable"""
+    return "C {}".format(text.replace('_', ' '))
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-    
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+ 
