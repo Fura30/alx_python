@@ -1,8 +1,6 @@
-#!/usr/bin/python3
 import csv
 import requests
 import sys
-
 
 def get_employee_info(employee_id):
     """
@@ -36,6 +34,9 @@ def get_employee_info(employee_id):
     print(f"TODO list exported to {filename}")
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python3 export_to_CSV.py <employee_id>")
+        sys.exit(1)
 
     employee_id = int(sys.argv[1])
     get_employee_info(employee_id)
