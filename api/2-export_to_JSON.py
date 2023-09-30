@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import json
 import requests
 import sys
@@ -17,7 +16,7 @@ def get_employee_info(employee_id):
     employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     response = requests.get(employee_url)
     employee_data = response.json()
-    employee_name = employee_data['name']
+    employee_name = employee_data.get('name')
 
     # Get employee TODO list
     todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
@@ -28,8 +27,8 @@ def get_employee_info(employee_id):
     json_data = {str(employee_id): []}
     for todo in todo_data:
         json_data[str(employee_id)].append({
-            "task": todo['title'],
-            "completed": todo['completed'],
+            "task": todo.get('title'),
+            "completed": todo.get('completed'),
             "username": employee_name
         })
 
@@ -41,6 +40,9 @@ def get_employee_info(employee_id):
     print(f"TODO list exported to {filename}")
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python3 export_to_JSON.py <employee_id>")
+        sys.exit(1)
 
     employee_id = int(sys.argv[1])
     get_employee_info(employee_id)
