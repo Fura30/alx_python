@@ -11,7 +11,7 @@ def fetch_employee_data(employee_id):
     # Fetch employee data
     response_employee = requests.get(employee_url)
     employee_data = response_employee.json()
-    employee_name = employee_data.get("name")
+    employee_name = employee_data.get("username")
 
     # Fetch TODO list data
     response_todo = requests.get(todo_url)
