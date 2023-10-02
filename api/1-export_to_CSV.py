@@ -8,7 +8,11 @@ def export_to_csv(employee_id):
     """
     Export the tasks owned by the employee with the given ID to a CSV file.
 
- 
+    Args:
+        employee_id (int): The ID of the employee.
+
+    Returns:
+        None
     """
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     tasks_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
@@ -36,12 +40,5 @@ def export_to_csv(employee_id):
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    
-
-
- 
-=======
     employee_id = int(argv[1])
     export_to_csv(employee_id)
->>>>>>> 162cbbab9c700c0fb0bb1ad7cd0c65519a22ab26
