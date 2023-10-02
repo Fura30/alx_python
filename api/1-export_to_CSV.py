@@ -31,7 +31,7 @@ def export_to_csv(employee_id):
 
     with open(csv_filename, "w", newline="") as csvfile:
         csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+       # csvwriter.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         csvwriter.writerows(employee_tasks)
 
 
